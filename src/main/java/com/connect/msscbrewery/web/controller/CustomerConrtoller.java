@@ -10,6 +10,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.ConstraintViolationException;
+import javax.validation.Valid;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Controller
@@ -28,7 +32,7 @@ public class CustomerConrtoller {
         }
 
         @PostMapping
-        public ResponseEntity<CustomerDTO> handlePost(@RequestBody CustomerDTO customerDTO) {
+        public ResponseEntity<CustomerDTO> handlePost(@Valid  @RequestBody CustomerDTO customerDTO) {
             System.out.println("Customer DTO Name" + customerDTO.getName());
             CustomerDTO customerDTO1 = customerService.addCustomer(customerDTO);
             HttpHeaders headers = new HttpHeaders();
@@ -38,7 +42,7 @@ public class CustomerConrtoller {
         }
 
         @PutMapping("/{customerId}")
-        public ResponseEntity handleUpdate(@PathVariable("customerId") UUID customerId, @RequestBody CustomerDTO customerDTO) {
+        public ResponseEntity handleUpdate(@PathVariable("customerId") UUID customerId,@Valid @RequestBody CustomerDTO customerDTO) {
             customerService.updateCustomer(customerId, customerDTO);
             return new ResponseEntity(HttpStatus.NO_CONTENT);
         }

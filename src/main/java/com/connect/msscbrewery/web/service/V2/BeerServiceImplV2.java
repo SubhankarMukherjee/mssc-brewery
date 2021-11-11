@@ -14,7 +14,7 @@ public class BeerServiceImplV2 implements BeerServiceV2 {
     @Override
     public BeerDTOV2 getBeerById() {
         return BeerDTOV2.builder().id(UUID.randomUUID())
-                .beerName("Galaxy Cat").beerStyle(BeerDto.BeerStyleEnum.stout).build();
+                .beerName("Galaxy Cat").beerStyle("ale").build();
     }
 
     @Override

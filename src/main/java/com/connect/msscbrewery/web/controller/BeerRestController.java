@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.UUID;
 
 @Deprecated
@@ -16,7 +17,7 @@ import java.util.UUID;
 public class BeerRestController {
 
     @Autowired
-private BeerService beerService;
+ BeerService beerService;
 
     @GetMapping("/{beerId}")
     public ResponseEntity<BeerDto> getBeer(@PathVariable("beerId") UUID beerId)
@@ -25,18 +26,18 @@ private BeerService beerService;
     }
 
     @PostMapping
-    public ResponseEntity<BeerDto> handlePost(@RequestBody BeerDto beerDto)
+    public ResponseEntity<BeerDto> handlePost(@Valid @RequestBody BeerDto beerDto)
     {
         System.out.println("BeerDTO Name"+beerDto.getBeerName());
         BeerDto dto = beerService.addBeer(beerDto);
         HttpHeaders headers= new HttpHeaders();
         // add hostname to URL
-        headers.add("Location","/app/v1/beer"+dto.getId().toString());
+        headers.add("Location","/app/v1/beer/"+ dto.getId().toString());
         return new ResponseEntity(headers,HttpStatus.CREATED);
     }
 
     @PutMapping("/{beerId}")
-    public ResponseEntity handleUpdate(@PathVariable("beerId") UUID beerId, @RequestBody  BeerDto beerDto)
+    public ResponseEntity handleUpdate(@PathVariable("beerId") UUID beerId, @Valid @RequestBody  BeerDto beerDto)
     {
         beerService.updateBeer(beerId, beerDto);
         return new ResponseEntity(HttpStatus.NO_CONTENT);
