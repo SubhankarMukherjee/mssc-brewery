@@ -3,6 +3,7 @@ package com.connect.msscbrewery.web.controller;
 import com.connect.msscbrewery.web.model.CustomerDTO;
 import com.connect.msscbrewery.web.model.CustomerDTO;
 import com.connect.msscbrewery.web.service.CustomerService;
+import lombok.val;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -34,7 +35,7 @@ public class CustomerConrtoller {
         @PostMapping
         public ResponseEntity<CustomerDTO> handlePost(@Valid  @RequestBody CustomerDTO customerDTO) {
             System.out.println("Customer DTO Name" + customerDTO.getName());
-            CustomerDTO customerDTO1 = customerService.addCustomer(customerDTO);
+            val customerDTO1 = customerService.addCustomer(customerDTO);
             HttpHeaders headers = new HttpHeaders();
             // add hostname to URL
             headers.add("Location", "/app/v1/customer" + customerDTO1.getId().toString());
