@@ -6,7 +6,7 @@ import com.connect.msscbrewery.web.model.V2.BeerDTOV2;
 import java.util.UUID;
 
 public interface BeerServiceV2 {
-    BeerDTOV2 getBeerById();
+    BeerDTOV2 getBeerById(UUID id);
 
     BeerDTOV2 addBeer(BeerDTOV2 beerDTOV2);
 

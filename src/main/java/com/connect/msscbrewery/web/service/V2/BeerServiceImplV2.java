@@ -12,7 +12,7 @@ import java.util.UUID;
 @Slf4j
 public class BeerServiceImplV2 implements BeerServiceV2 {
     @Override
-    public BeerDTOV2 getBeerById() {
+    public BeerDTOV2 getBeerById(UUID id) {
         return BeerDTOV2.builder().id(UUID.randomUUID())
                 .beerName("Galaxy Cat").beerStyle("ale").build();
     }

@@ -7,6 +7,7 @@ import lombok.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Null;
 import javax.validation.constraints.Positive;
+import javax.validation.constraints.Size;
 import java.sql.Timestamp;
 import java.time.OffsetDateTime;
 import java.util.UUID;
@@ -22,6 +23,7 @@ public class BeerDTOV2 {
     @Null
     private UUID id;
     @NotBlank
+    @Size(min=3, max=100)
     private String beerName;
     @NotBlank
     private String beerStyle;

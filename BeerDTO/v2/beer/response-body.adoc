@@ -1,0 +1,4 @@
+[source,options="nowrap"]
+----
+{"id":"45599781-0a06-4ec6-883d-f0977580d204","beerName":"heniken","beerStyle":"ale","upc":null,"creationDate":null,"lastModifiedDate":null}
+----

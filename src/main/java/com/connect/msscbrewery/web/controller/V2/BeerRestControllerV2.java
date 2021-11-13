@@ -27,7 +27,7 @@ public class BeerRestControllerV2 {
 
     @GetMapping("/{beerId}")
     public ResponseEntity<BeerDTOV2> getBeer(@NotNull  @PathVariable("beerId") UUID beerId) {
-        return new ResponseEntity<>(beerServiceV2.getBeerById(), HttpStatus.OK);
+        return new ResponseEntity<>(beerServiceV2.getBeerById(beerId), HttpStatus.OK);
     }
 
     @PostMapping
