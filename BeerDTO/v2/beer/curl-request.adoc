@@ -1,5 +1,0 @@
-[source,bash]
-----
-$ curl 'http://anyserver.com.sa:8810/api/v2/beer/fc360255-9b9c-43f4-8826-416ab7e3ab15?isCold=Yes' -i -X GET \
-    -H 'Accept: application/json'
-----

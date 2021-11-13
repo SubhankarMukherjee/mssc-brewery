@@ -1,8 +1,0 @@
-[source,http,options="nowrap"]
-----
-HTTP/1.1 200 OK
-Content-Type: application/json
-Content-Length: 139
-
-{"id":"45599781-0a06-4ec6-883d-f0977580d204","beerName":"heniken","beerStyle":"ale","upc":null,"creationDate":null,"lastModifiedDate":null}
-----

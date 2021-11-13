@@ -1,5 +1,6 @@
 package com.connect.msscbrewery.web.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
 import javax.validation.constraints.NotBlank;
@@ -16,6 +17,7 @@ import java.util.UUID;
 
 public class BeerDto {
 
+    @JsonProperty("beerId")
     @Null
     private UUID id;
     @NotBlank

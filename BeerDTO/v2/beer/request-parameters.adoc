@@ -1,7 +1,0 @@
-|===
-|Parameter|Description
-
-|`+isCold+`
-|IsCold is request param
-
-|===
